@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "blog",
+      "script": "npm --watch -- run build",
+      "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+      "ignoreWatch": ["[\\/\\\\]\\./", "node_modules"],
+      "watch": "true",
+      "exec_mode": "cluster",
+      "instance_var": "INSTANCE_ID",
+      "instances": 4,
+      "wait_ready": true,
+      "listen_timeout": 3000,
+      "kill_timeout": 1600,
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

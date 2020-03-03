@@ -224,9 +224,9 @@ function AddArticle(props) {
                     size="large"
                     onChange={selectTypeHandler}
                   >
-                    {typeInfo.map((item, index) => {
+                    {typeInfo.map(item => {
                       return (
-                        <Option key={index} value={item.Id}>
+                        <Option key={item.id} value={item.id}>
                           {item.typeName}
                         </Option>
                       );

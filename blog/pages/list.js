@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Row, Col, List, Icon, Breadcrumb } from "antd";
+import Link from "next/link";
+import { Row, Col, List, Icon, Breadcrumb, Spin, Affix } from "antd";
 import marked from "marked";
 import hljs from "highlight.js";
 import "highlight.js/styles/monokai-sublime.css";
 
-import Link from "next/link";
 import api from "../config/api";
 import Header from "../components/Header";
 import Author from "../components/Author";
 import Advert from "../components/Advert";
 import Footer from "../components/Footer";
-// import "../static/style/pages/list.css";
+import "../static/style/pages/list.css";
 
 const ArticleList = list => {
   const [mylist, setMylist] = useState(list.data);
+  const [loading, setLoading] = useState(false);
+  const goLoading = () => {
+    setLoading(true);
+  };
+
   const renderer = new marked.Renderer();
   marked.setOptions({
     renderer: renderer,
@@ -37,11 +42,19 @@ const ArticleList = list => {
   return (
     <>
       <Head>
-        <title>{mylist.length > 0 ? mylist[0]["typeName"] : "视频列表"}</title>
+        <title>列表 | 扬舲技术博客</title>
+        <link
+          rel="icon"
+          href="../static/favicon.ico"
+          mce_href="../static/favicon.ico"
+          type="image/x-icon"
+        />
       </Head>
-      <Header />
+      <Affix offsetTop={0}>
+        <Header />
+      </Affix>
       <Row className="comm-main" type="flex" justify="center">
-        <Col className="comm-left" xs={24} sm={24} md={16} lg={18} xl={14}>
+        <Col className="comm-left" xs={24} sm={24} md={18}>
           <div>
             <div className="bread-div">
               <Breadcrumb>
@@ -89,9 +102,9 @@ const ArticleList = list => {
           </div>
         </Col>
 
-        <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
+        <Col className="comm-right" xs={0} sm={0} md={6}>
           <Author />
-          <Advert />
+          {/* <Advert /> */}
         </Col>
       </Row>
       <Footer />
@@ -101,9 +114,15 @@ const ArticleList = list => {
 
 ArticleList.getInitialProps = async context => {
   let id = context.query.id;
-  const res = await api.getListById({ id });
-  console.log("pid", id);
-  console.log("result", res);
+  let res;
+  if (id) {
+    res = await api.getListById({ id });
+    console.log("pid", id);
+    console.log("result", res);
+  } else {
+    console.log("error.....");
+    return { article_content: "Id Error" };
+  }
 
   return res;
 };
