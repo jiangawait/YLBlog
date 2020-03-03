@@ -34,48 +34,35 @@ const Header = () => {
           <Col xs={24} sm={24} md={13}>
             <span className="header-logo">
               <Link href={{ pathname: "/index" }}>
-                <a> 技术胖</a>
+                <a> 扬舲BLOG</a>
               </Link>
             </span>
-            <span className="header-txt">专注前端开发,每年100集免费视频。</span>
+            <span className="header-txt">专注前端开发</span>
           </Col>
 
           <Col className="memu-div" xs={0} sm={0} md={11}>
-            <Row type="flex">
-              <Col xs={0} sm={0} md={6}>
+            <Menu mode="horizontal">
+              <Menu.Item key="0">
                 <Link href={{ pathname: "/" }}>
                   <a>
-                    <Icon type="home" /> 博客首页
+                    <Icon type="home" />
+                    首页
                   </a>
                 </Link>
-              </Col>
+              </Menu.Item>
               {navArray.map(item => {
                 return (
-                  <Col xs={0} sm={0} md={6} key={item.id}>
+                  <Menu.Item key={item.id}>
                     <Link href={{ pathname: "/list", query: { id: item.id } }}>
                       <a>
-                        <Icon type={item.icon} /> {item.typeName}
+                        <Icon type={item.icon} />
+                        {item.typeName}
                       </a>
                     </Link>
-                  </Col>
+                  </Menu.Item>
                 );
               })}
-            </Row>
-            {/* <Menu mode="horizontal" onClick={handleClick}>
-              <Menu.Item key="0">
-                <Icon type="home" />
-                首页
-              </Menu.Item> */}
-
-            {/* <Menu.Item key="video">
-              <Icon type="youtube" />
-              视频
-            </Menu.Item>
-            <Menu.Item key="life">
-              <Icon type="smile" />
-              生活
-            </Menu.Item> */}
-            {/* </Menu> */}
+            </Menu>
           </Col>
         </Row>
       </div>

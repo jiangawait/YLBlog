@@ -5,13 +5,10 @@ const Author = () => {
   return (
     <div className="author-div comm-box">
       <div>
-        <Avatar
-          size={100}
-          src="http://blogimages.jspang.com/blogtouxiang1.jpg"
-        />
+        <Avatar size={100} src="https://s2.ax1x.com/2020/03/04/35VsMQ.jpg" />
       </div>
       <div className="author-introduction">
-        光头程序员，专注于WEB和移动前端开发。要录1000集免费前端视频的傻X。此地维权无门，此时无能为力，此心随波逐流。
+        北冥有鱼，其名为鲲。鲲之大，不知其几千里也；化而为鸟，其名为鹏。鹏之背，不知其几千里也；
         <Divider>社交账号</Divider>
         <Avatar size={28} icon="github" className="account" />
         <Avatar size={28} icon="qq" className="account" />

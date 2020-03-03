@@ -1,12 +1,16 @@
 import axios from "axios";
+import getConfig from "next/config";
+const { serverBaseUrl } = getConfig().publicRuntimeConfig;
+console.log("serverBaseUrl=", serverBaseUrl);
 
-const prefix = "http://127.0.0.1:7001/default/";
+// axios.defaults.baseURL=serverBaseUrl;
+// const prefix = "http://127.0.0.1:7001/default/";
 
 const request = async (url, { method = "GET", ...params }) => {
   const promise = new Promise(resolve => {
     axios
       .request({
-        baseURL: prefix,
+        baseURL: serverBaseUrl,
         url: url,
         method: method,
         params: params
