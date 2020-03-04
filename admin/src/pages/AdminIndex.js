@@ -54,7 +54,7 @@ function AdminIndex(props) {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-        <div className="logo"> JSPang System </div>>
+        <div className="logo"> 博客后台系统 </div>>
         <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
           <Menu.Item key="1">
             <Icon type="pie-chart" />
@@ -74,7 +74,7 @@ function AdminIndex(props) {
             <Menu.Item key="addArticle">添加文章</Menu.Item>
             <Menu.Item key="articleList">文章列表</Menu.Item>
           </SubMenu>
-          <Menu.Item key="2" onClick={handleBBD}>
+          {/* <Menu.Item key="2" onClick={handleBBD}>
             <Icon type="file" />
             <span>大胖逼逼叨</span>
           </Menu.Item>
@@ -82,7 +82,7 @@ function AdminIndex(props) {
           <Menu.Item key="9">
             <Icon type="file" />
             <span>留言管理</span>
-          </Menu.Item>
+          </Menu.Item> */}
 
           <Menu.Item key="10" onClick={handleExit}>
             <Icon type="file" />
@@ -106,7 +106,9 @@ function AdminIndex(props) {
             </div>
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>JSPang.com</Footer>
+        <Footer style={{ textAlign: "center" }}>
+          Copyright © 2020 kobin Inc. All rights reserved.
+        </Footer>
       </Layout>
     </Layout>
   );
