@@ -42,7 +42,7 @@ const ArticleList = list => {
   return (
     <>
       <Head>
-        <title>列表 | 扬舲技术博客</title>
+        <title>列表 | kobin blog</title>
         <link
           rel="icon"
           href="../static/favicon.ico"

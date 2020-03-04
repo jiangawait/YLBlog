@@ -97,7 +97,9 @@ class HomeController extends Controller {
 
   // 得到类别名称和编号
   async getTypeInfo() {
-    const result = await this.app.mysql.select('type');
+    const result = await this.app.mysql.select('type', {
+      orders: [[ 'orderNum', 'ASC' ]],
+    });
     this.ctx.body = { data: result };
   }
 

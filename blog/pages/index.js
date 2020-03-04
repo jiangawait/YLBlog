@@ -41,8 +41,8 @@ const Home = res => {
   return (
     <>
       <Head>
-        <title>首页 | 扬舲技术博客</title>
-        <meta name="description" content="首页 | 扬舲技术博客"></meta>
+        <title>首页 | kobin blog</title>
+        <meta name="description" content="首页 | kobin blog"></meta>
         <link
           rel="icon"
           href="../static/favicon.ico"

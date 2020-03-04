@@ -34,7 +34,7 @@ const Header = () => {
           <Col xs={24} sm={24} md={13}>
             <span className="header-logo">
               <Link href={{ pathname: "/index" }}>
-                <a> 扬舲BLOG</a>
+                <a> kobin blog</a>
               </Link>
             </span>
             <span className="header-txt">专注前端开发</span>
@@ -55,7 +55,7 @@ const Header = () => {
                   <Menu.Item key={item.id}>
                     <Link href={{ pathname: "/list", query: { id: item.id } }}>
                       <a>
-                        <Icon type={item.icon} />
+                        {/* <Icon type={item.icon || "book"} /> */}
                         {item.typeName}
                       </a>
                     </Link>
