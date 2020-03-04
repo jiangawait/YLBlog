@@ -50,7 +50,9 @@ class MainController extends Controller {
 
   // 后台文章分类信息
   async getTypeInfo() {
-    const resType = await this.app.mysql.select('type');
+    const resType = await this.app.mysql.select('type', {
+      orders: [[ 'orderNum', 'ASC' ]],
+    });
     this.ctx.body = { data: resType };
   }
   // 添加文章
