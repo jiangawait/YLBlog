@@ -37,7 +37,10 @@ class MainController extends Controller {
 
   async checkOpenId() {
     const cOpenId = this.ctx.request.body.openId;
-    const sOpenId = this.ctx.session.openId.openId;
+    const sOpenId =
+      this.ctx.session &&
+      this.ctx.session.openId &&
+      this.ctx.session.openId.openId;
     if (sOpenId && cOpenId === sOpenId) {
       this.ctx.body = { data: '已经登录' };
     } else {
