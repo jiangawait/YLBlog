@@ -120,3 +120,18 @@ sql 被攻击的原因是：sql 语句伪造参数，然后对参数进行拼接
 - 开启 CSP 网页安全政策防止 XSS 攻击
   - CSP 是网页安全政策(Content Security Policy)的缩写。主要用来防止 XSS 攻击。是一种由开发者定义的安全性政策申明，通过 CSP 所约束的责任指定可信的内容来源，通过 Content-Security-Policy 网页的开发者可以控制整个页面中 外部资源 的加载和执行。
   - `<meta http-equiv="Content-Security-Policy" content=" default-src http: https: *.xxx.com 'self' 'unsafe-inline' ; style-src 'self' 'unsafe-inline' *.yyy.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' ; ">`
+
+# CSRF(跨站请求伪造)
+
+完成一次 CSRF 攻击，需要完成如下事情：
+
+1. 登录受信任的网站 A，并且在本地生成 cookie。
+2. 在不登出网站 A 的情况下，继续访问危险网站 B。
+
+CSRF 基本原理是：假设 A 网站是一个银行网站，而我是该网站的用户，当我以受信任的身份登录了该网站的时候，这时候 A 网站是通过 cookie 保留了我们的登录状态，这个时候我去登录了恶意网站 B 的时候，B 网站就会拿到我登录 A 网站的 cookie 信息到，因此 B 网站就把拿到的 cookie 信息去重新请求 A 网站的接口，但是在该接口后面的参数做一些修改，因此就这样达到攻击的目的。
+
+## CSRF 防范措施
+
+- 服务端验证 HTTP Referer 字段
+- 加验证码
+- 使用 Token

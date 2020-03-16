@@ -9,3 +9,15 @@
 [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/)
 
 [未来可期的 TypeScript](https://mp.weixin.qq.com/s/FwrId8d2kCJKvtGTdM2xHw)
+
+[别再说虚拟 DOM 快了，要被打脸的](https://mp.weixin.qq.com/s/XR3-3MNCYY2pg6yVwVQohQ)
+
+[深入理解虚拟 DOM，它真的不快](https://mp.weixin.qq.com/s/cz5DBpqFiadL4IQofiWY3A)
+
+[Deep In React 之详谈 React 16 Diff 策略(二)](https://juejin.im/post/5d3e3231e51d4510926a7c39)
+
+[ReactFiber 在并发模式下的运行机制](https://zhuanlan.zhihu.com/p/54042084)
+
+[前端浏览器输入 URL 后发生什么](https://zhuanlan.zhihu.com/p/78677852)
+
+[大公司如何部署前端代码](https://github.com/fouber/blog/issues/6)
