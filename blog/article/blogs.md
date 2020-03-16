@@ -21,3 +21,5 @@
 [前端浏览器输入 URL 后发生什么](https://zhuanlan.zhihu.com/p/78677852)
 
 [大公司如何部署前端代码](https://github.com/fouber/blog/issues/6)
+
+[Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
