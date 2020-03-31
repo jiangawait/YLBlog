@@ -48,6 +48,7 @@ module.exports = appInfo => {
       'http://47.99.240.75:3000',
       'http://47.99.240.75:3002',
       'http://47.99.240.75:8080',
+      'http://kobin.top'
     ],
   };
 
