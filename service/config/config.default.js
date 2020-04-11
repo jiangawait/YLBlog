@@ -1,11 +1,11 @@
 /* eslint valid-jsdoc: "off" */
 
-'use strict';
+"use strict";
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
-module.exports = appInfo => {
+module.exports = (appInfo) => {
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
@@ -13,7 +13,7 @@ module.exports = appInfo => {
   const config = (exports = {});
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1582881647136_3341';
+  config.keys = appInfo.name + "_1582881647136_3341";
 
   // add your middleware config here
   config.middleware = [];
@@ -21,15 +21,15 @@ module.exports = appInfo => {
     // database configuration
     client: {
       // host
-      host: '47.99.240.75',
+      host: "47.99.240.75",
       // port
-      port: '3306',
+      port: "3306",
       // username
-      user: 'root',
+      user: "root",
       // password
-      password: 'yangling2020',
+      password: "yangling2020",
       // database
-      database: 'yangling_blog',
+      database: "yangling_blog",
     },
     // load into app, default is open
     app: true,
@@ -42,13 +42,14 @@ module.exports = appInfo => {
       enable: false,
     },
     domainWhiteList: [
-      'http://localhost:3000',
-      'http://localhost:3002',
-      'http://localhost:8080',
-      'http://47.99.240.75:3000',
-      'http://47.99.240.75:3002',
-      'http://47.99.240.75:8080',
-      'http://kobin.top'
+      "http://localhost:3000",
+      "http://localhost:3002",
+      "http://localhost:8080",
+      "http://47.99.240.75:3000",
+      "http://47.99.240.75:3002",
+      "http://47.99.240.75:8080",
+      "http://kobin.top",
+      "http://kobin.top:3000",
     ],
   };
 
@@ -56,15 +57,15 @@ module.exports = appInfo => {
     // origin: '*',
     // origin: 'http://localhost:3000', // 只允许这个域进行访问接口,不能设置多个域名，多个域名需设置`security.domainWhiteList`
     credentials: true, // 开启认证
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+    allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
   };
 
   // 长文本设置
   config.bodyParser = {
     enable: true,
-    encoding: 'utf8',
-    formLimit: '5024kb',
-    jsonLimit: '5024kb',
+    encoding: "utf8",
+    formLimit: "5024kb",
+    jsonLimit: "5024kb",
     strict: true,
     // @see https://github.com/hapijs/qs/blob/master/lib/parse.js#L8 for more options
     queryString: {
